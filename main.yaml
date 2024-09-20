@@ -6,13 +6,3 @@
   become: yes
   roles:
   - "{{ component }}"
-
-
-# - name: "configure {{ component }} server"
-#   hosts: all
-#   connection: local
-#   vars_files:
-#   - "variables-{{ env }}.yaml"
-#   become: yes
-#   roles:
-#   - "{{ component }}"
