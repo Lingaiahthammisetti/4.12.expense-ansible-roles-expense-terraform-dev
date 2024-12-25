@@ -34,11 +34,11 @@
   #     dest: "/tmp/backend.zip"
 
 
-  # - name: unzip backend code
-  #   ansible.builtin.unarchive:
-  #     src: /tmp/backend.zip
-  #     dest: /app
-  #     remote_src: yes 
+  - name: unzip backend code
+    ansible.builtin.unarchive:
+      src: /tmp/backend.zip
+      dest: /app
+      remote_src: yes 
 
   - name: run app pre-requisites
     tags:
@@ -47,12 +47,12 @@
       name: common
       tasks_from: app-pre-req
 
-  # - name: install npm dependencies
-  #   tags:
-  #   - deployment
-  #   ansible.builtin.command: npm install
-  #   args:
-  #     chdir: /app
+  - name: install npm dependencies
+    tags:
+    - deployment
+    ansible.builtin.command: npm install
+    args:
+      chdir: /app
 
   - name: copy backend service
     ansible.builtin.template: 
