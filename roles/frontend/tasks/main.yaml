@@ -3,12 +3,6 @@
       name: nginx
       state: latest
 
-  # - name: start and enable nginx server
-  #   ansible.builtin.service:
-  #     name: nginx
-  #     state: started
-  #     enabled: yes
-
   - name: run app pre-requisites
     ansible.builtin.import_role:
       name: common
